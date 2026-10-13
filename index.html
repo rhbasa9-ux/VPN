@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RG GAMER BOY FF</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+    background:#030914;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+    overflow-x:hidden;
+}
+
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    left:50%;
+    width:70vw;
+    max-width:620px;
+    height:110px;
+    border-radius:50%;
+    transform:translateX(-50%);
+    pointer-events:none;
+    z-index:-1;
+    filter:blur(22px);
+    opacity:.65;
+    animation:floatGlow 4s ease-in-out infinite alternate;
+}
+
+body::before{
+    top:-35px;
+    background:radial-gradient(ellipse,#ff2020 0%,rgba(255,32,32,.25) 35%,transparent 72%);
+}
+
+body::after{
+    bottom:-35px;
+    background:radial-gradient(ellipse,#19ff72 0%,rgba(25,255,114,.22) 35%,transparent 72%);
+    animation-delay:1.5s;
+}
+
+.page{
+    width:100%;
+    max-width:760px;
+    margin:auto;
+    padding:10px;
+    position:relative;
+}
+
+.page::before,
+.page::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    width:92%;
+    height:4px;
+    transform:translateX(-50%);
+    border-radius:50%;
+    filter:blur(1px);
+    animation:linePulse 2.5s ease-in-out infinite alternate;
+}
+
+.page::before{
+    top:0;
+    background:linear-gradient(90deg,transparent,#ff2525,#ff5b5b,transparent);
+    box-shadow:0 0 18px #ff2525;
+}
+
+.page::after{
+    bottom:0;
+    background:linear-gradient(90deg,transparent,#20ff70,#76ff9e,transparent);
+    box-shadow:0 0 18px #20ff70;
+    animation-delay:1s;
+}
+
+@keyframes floatGlow{
+    from{transform:translateX(-50%) scale(.9) rotate(-2deg)}
+    to{transform:translateX(-50%) scale(1.08) rotate(2deg)}
+}
+
+@keyframes linePulse{
+    from{opacity:.45;transform:translateX(-50%) scaleX(.75)}
+    to{opacity:1;transform:translateX(-50%) scaleX(1)}
+}
+.main{background:radial-gradient(circle at top,#14233a,#050b15 48%,#020711);border:1px solid #18263c;border-radius:28px;overflow:hidden;box-shadow:
+    0 20px 45px rgba(0,0,0,.65),
+    0 0 28px rgba(255,30,30,.12),
+    0 0 45px rgba(25,255,110,.08);
+    transform:perspective(900px) rotateX(.7deg);
+    animation:cardGlow 5s ease-in-out infinite alternate}
+.header{height:90px;display:flex;align-items:center;justify-content:space-between;padding:0 22px}
+.menu{font-size:35px}.logo{text-align:center;font-size:22px;font-weight:900}
+.crown{display:block;color:#ffc21a;font-size:27px;line-height:24px}
+.fire{width:56px;height:56px;border:2px solid #ff3030;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:27px;animation:fireFloat 2.4s ease-in-out infinite;box-shadow:0 0 10px rgba(255,48,48,.25);transition:transform .2s ease,box-shadow .2s ease}.fire:hover{transform:scale(1.06);box-shadow:0 0 18px rgba(255,48,48,.45)}
+.title{text-align:center;font-size:29px;line-height:1.2;padding:0 15px;margin:25px 0 10px}
+.date{text-align:center;color:#a5b0c3;font-size:18px;margin-bottom:28px}
+.dot{color:#ff3d3d;margin:0 7px}
+.store-box{margin:0 22px 25px;min-height:210px;border-radius:25px;border:2px solid #ff3030;background:radial-gradient(circle at center,rgba(255,45,45,.18),transparent 55%),linear-gradient(145deg,#101c30,#050b15);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;box-shadow:0 0 20px rgba(255,45,45,.15),inset 0 0 30px rgba(0,0,0,.35)}
+.store-box h2{font-size:30px;color:#ff4545;line-height:1.2;text-shadow:0 0 8px rgba(255,50,50,.5),0 0 20px rgba(255,50,50,.25)}
+.download{margin:0 22px 20px;padding:22px;border-radius:27px;background:linear-gradient(145deg,#101c30,#0c1627);border:1px solid #263650;border-left:5px solid #ff3030;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.download h2{font-size:26px;margin-bottom:20px}
+.btn{position:relative;width:100%;min-height:60px;margin:13px 0;border-radius:35px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:19px;font-weight:800;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;transition:transform .15s,filter .15s;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.btn:active{transform:scale(.96)}
+.btn::before{content:"";position:absolute;inset:0;border-radius:35px;background:linear-gradient(120deg,transparent 25%,rgba(255,255,255,.35) 50%,transparent 75%);transform:translateX(-120%);transition:transform .55s ease;pointer-events:none}
+.btn:hover::before,.btn:focus-visible::before{transform:translateX(120%)}
+.btn:hover{transform:translateY(-4px) scale(1.015);filter:brightness(1.12);box-shadow:0 10px 25px rgba(255,48,56,.35)}
+.btn.red{background:#ff3038;color:white;animation:buttonFloat 2.2s ease-in-out infinite}
+.btn.yellow{background:#ffb30d;color:#111;animation:buttonFloat 2.2s ease-in-out infinite;animation-delay:.35s}
+.btn .arrow{transition:transform .3s ease,box-shadow .3s ease}
+.btn:hover .arrow{transform:translateX(5px) rotate(-4deg);box-shadow:0 0 14px rgba(255,255,255,.7)}
+@keyframes buttonFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.arrow{position:absolute;right:14px;width:35px;height:35px;border-radius:50%;background:white;color:#111;display:flex;align-items:center;justify-content:center;font-size:25px}
+.footer{text-align:center;color:#8797ae;font-size:14px;margin-top:-12px;padding:0 10px 15px}
+@media(max-width:520px){
+.page{padding:8px}.header{height:82px;padding:0 13px}.logo{font-size:18px}.fire{width:49px;height:49px;font-size:24px}
+.title{font-size:25px}.date{font-size:17px}.store-box{margin-left:12px;margin-right:12px;min-height:180px}.store-box h2{font-size:25px}
+.download{margin-left:12px;margin-right:12px;padding:17px 13px}.download h2{font-size:23px}.btn{min-height:56px;font-size:17px}
+}
+
+/* Menu update popup */
+.update-overlay{position:fixed;inset:0;background:rgba(0,0,0,.68);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
+.update-overlay.show{display:flex;animation:fadeIn .25s ease}
+.update-card{width:min(420px,92vw);padding:28px 22px;border:1px solid #ff3038;border-radius:24px;background:linear-gradient(145deg,#14233a,#050b15);box-shadow:0 0 35px rgba(255,48,56,.3);text-align:center;animation:popIn .3s ease}
+.update-icon{font-size:42px;margin-bottom:12px;animation:spinPulse 1.5s ease-in-out infinite}
+.update-card h2{font-size:24px;margin-bottom:10px;color:#ff4545}
+.update-card p{color:#b8c3d4;font-size:16px;line-height:1.5;margin-bottom:20px}
+.update-close{border:0;border-radius:30px;padding:12px 28px;font-weight:800;font-size:16px;cursor:pointer;background:#ff3038;color:#fff;box-shadow:0 6px 18px rgba(255,48,56,.3);transition:transform .15s}
+.update-close:active{transform:scale(.95)}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes popIn{from{opacity:0;transform:translateY(18px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes spinPulse{0%,100%{transform:rotate(0) scale(1)}50%{transform:rotate(180deg) scale(1.08)}}
+@keyframes fireFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-3px) rotate(2deg)}}
+</style>
+
+<style>
+#loginOverlay{position:fixed;inset:0;background:rgba(3,9,20,.92);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;z-index:99999}
+#loginCard{width:340px;background:rgba(20,35,58,.9);border:1px solid #ff3038;border-radius:22px;padding:24px;box-shadow:0 0 30px rgba(255,48,56,.35);color:#fff}
+.in{width:100%;padding:12px;margin:10px 0;border-radius:12px;border:1px solid #345;background:#091321;color:#fff}
+.btnL{width:100%;padding:12px;border:none;border-radius:14px;background:#ff3038;color:#fff;font-weight:bold}
+.err{color:#ff6b6b;height:18px}.top{text-align:center;font-size:28px}
+</style>
+<style id="premium-upgrade">
+/* Premium UI upgrade */
+/* 7-color neon light cycle: changes every 2 seconds */
+body::before{
+  background:radial-gradient(ellipse,var(--cycle) 0%,color-mix(in srgb,var(--cycle) 25%,transparent) 35%,transparent 72%) !important;
+  transition:background 1s ease;
+}
+.page::before{
+  background:linear-gradient(90deg,transparent,var(--cycle),color-mix(in srgb,var(--cycle) 65%,white),transparent) !important;
+  box-shadow:0 0 18px var(--cycle) !important;
+  transition:background 1s ease,box-shadow 1s ease;
+}
+.main{
+  border-color:color-mix(in srgb,var(--cycle) 38%,#18263c) !important;
+  transition:border-color 1s ease,box-shadow 1s ease;
+}
+.store-box{
+  border-color:var(--cycle) !important;
+  box-shadow:0 0 28px color-mix(in srgb,var(--cycle) 28%,transparent),inset 0 0 35px rgba(0,0,0,.38) !important;
+  transition:border-color 1s ease,box-shadow 1s ease;
+}
+.store-box h2{
+  color:var(--cycle) !important;
+  transition:color 1s ease,text-shadow 1s ease;
+}
+.btn.red{
+  background:var(--cycle) !important;
+  box-shadow:0 10px 30px color-mix(in srgb,var(--cycle) 25%,transparent),inset 0 1px 0 rgba(255,255,255,.28) !important;
+  transition:background 1s ease,box-shadow 1s ease;
+}
+.fire{
+  border-color:var(--cycle) !important;
+  box-shadow:0 0 18px color-mix(in srgb,var(--cycle) 45%,transparent) !important;
+  transition:border-color 1s ease,box-shadow 1s ease;
+}
+
+:root{
+  --red:#ff3038; --red2:#ff5f66; --gold:#ffc21a; --green:#20ff70;
+  --cycle:#ff3038;
+}
+body{
+  background:
+    radial-gradient(circle at 15% 15%,rgba(255,48,56,.10),transparent 28%),
+    radial-gradient(circle at 85% 80%,rgba(32,255,112,.08),transparent 28%),
+    #030914;
+}
+.page{padding-top:18px;padding-bottom:18px}
+.main{
+  position:relative;
+  border-color:rgba(255,255,255,.10);
+  box-shadow:0 24px 70px rgba(0,0,0,.70),0 0 45px rgba(255,48,56,.13),inset 0 1px 0 rgba(255,255,255,.06);
+  animation:premiumBreath 5s ease-in-out infinite;
+}
+.main::after{content:"";display:none;
+}
+.header{position:relative;z-index:2}
+.menu{
+  width:50px;height:50px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.10);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 8px 22px rgba(0,0,0,.25);
+  transition:.25s ease;cursor:pointer;
+}
+.menu:hover{transform:translateY(-3px) rotate(3deg);border-color:rgba(255,48,56,.65);box-shadow:0 10px 28px rgba(255,48,56,.18)}
+.logo{letter-spacing:.7px;text-shadow:0 0 18px rgba(255,194,26,.22)}
+.crown{animation:crownPulse 2.4s ease-in-out infinite}
+.title{font-weight:900;letter-spacing:.2px;text-shadow:0 3px 20px rgba(255,255,255,.08);animation:titleIn .7s ease both}
+.date{animation:fadeUp .8s .1s ease both}
+.store-box{
+  position:relative;overflow:hidden;
+  border-color:rgba(255,48,56,.75);
+  box-shadow:0 0 28px rgba(255,45,45,.18),inset 0 0 35px rgba(0,0,0,.38);
+  animation:boxFloat 4s ease-in-out infinite;
+}
+.store-box>div{position:relative;z-index:1}
+.store-box h2{animation:textGlow 2.2s ease-in-out infinite alternate}
+#onlineUsers{padding:8px 14px;border-radius:999px;background:rgba(124,255,124,.06);border:1px solid rgba(124,255,124,.18);display:inline-block;animation:statusPulse 2s ease-in-out infinite}
+.download{
+  position:relative;overflow:hidden;
+  border-color:rgba(255,255,255,.10);
+  box-shadow:0 14px 35px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.05);
+}
+.download h2{letter-spacing:.2px}
+.btn{
+  overflow:hidden;border:1px solid rgba(255,255,255,.16)!important;
+  box-shadow:0 10px 25px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.25);
+}
+.btn::after{
+  content:"";position:absolute;inset:1px;border-radius:34px;
+  background:linear-gradient(180deg,rgba(255,255,255,.18),transparent 45%,rgba(0,0,0,.10));
+  pointer-events:none;
+}
+.btn.red{box-shadow:0 10px 30px rgba(255,48,56,.22),inset 0 1px 0 rgba(255,255,255,.28);animation:buttonFloat 2.4s ease-in-out infinite, redPulse 3s ease-in-out infinite}
+.btn.yellow{box-shadow:0 10px 30px rgba(255,179,13,.18),inset 0 1px 0 rgba(255,255,255,.30)}
+.arrow{z-index:2;box-shadow:0 3px 12px rgba(0,0,0,.25)}
+.footer{opacity:.9;letter-spacing:.2px;animation:fadeUp 1s .25s ease both}
+#loginOverlay{background:rgba(1,6,15,.91)!important}
+#loginCard{
+  position:relative;overflow:hidden;
+  border-color:rgba(255,48,56,.72)!important;
+  box-shadow:0 28px 80px rgba(0,0,0,.75),0 0 45px rgba(255,48,56,.20)!important;
+  animation:loginIn .55s cubic-bezier(.2,.8,.2,1) both;
+}
+#loginCard::before{
+  content:"";position:absolute;inset:-70%;background:conic-gradient(from 0deg,transparent,rgba(255,48,56,.16),transparent 24%);
+  animation:rotateGlow 7s linear infinite;pointer-events:none;
+}
+#loginCard>*{position:relative;z-index:1}
+.top{font-weight:900;text-shadow:0 0 18px rgba(255,255,255,.12);margin-bottom:8px}
+.in{
+  border-color:rgba(255,255,255,.12)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+  transition:.22s ease;
+}
+.in:focus{outline:none;border-color:rgba(255,48,56,.75)!important;box-shadow:0 0 0 3px rgba(255,48,56,.10),0 0 18px rgba(255,48,56,.13);transform:translateY(-1px)}
+.btnL{
+  cursor:pointer;transition:.2s ease;
+  box-shadow:0 9px 22px rgba(255,48,56,.20),inset 0 1px 0 rgba(255,255,255,.22);
+}
+.btnL:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.update-card,.coolcard{
+  position:relative;overflow:hidden;
+  box-shadow:0 28px 80px rgba(0,0,0,.72),0 0 45px rgba(255,48,56,.20)!important;
+}
+.update-card::before,.coolcard::before{
+  content:"";position:absolute;inset:-80%;background:conic-gradient(from 0deg,transparent,rgba(255,48,56,.14),transparent 25%);
+  animation:rotateGlow 7s linear infinite;pointer-events:none;
+}
+.update-card>* ,.coolcard>*{position:relative;z-index:1}
+
+
+@keyframes premiumBreath{0%,100%{box-shadow:0 24px 70px rgba(0,0,0,.70),0 0 45px rgba(255,48,56,.12),inset 0 1px 0 rgba(255,255,255,.06)}50%{box-shadow:0 27px 76px rgba(0,0,0,.72),0 0 55px rgba(32,255,112,.10),inset 0 1px 0 rgba(255,255,255,.08)}}
+@keyframes panelSweep{0%,55%{transform:translateX(-120%)}75%,100%{transform:translateX(120%)}}
+@keyframes crownPulse{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-3px) scale(1.08)}}
+@keyframes titleIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes boxFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes rotateGlow{to{transform:rotate(360deg)}}
+@keyframes textGlow{from{text-shadow:0 0 8px rgba(255,50,50,.45)}to{text-shadow:0 0 16px rgba(255,80,80,.85),0 0 30px rgba(255,50,50,.25)}}
+@keyframes statusPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+@keyframes redPulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.05)}}
+@keyframes loginIn{from{opacity:0;transform:translateY(25px) scale(.96)}to{opacity:1;transform:none}}
+@media(max-width:520px){
+  .page{padding-top:12px;padding-bottom:12px}.main{border-radius:24px}
+  .menu{width:46px;height:46px}.store-box{animation:none}
+  .btn:hover{transform:translateY(-2px) scale(1.01)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
+}
+</style>
+
+
+<style id="text-shadow-upgrade">
+/* RG GAMER BOY FF logo stays fixed; no color-cycle effect */
+.logo{
+  color:#fff !important;
+  text-shadow:0 2px 5px rgba(0,0,0,.55),0 0 14px rgba(255,255,255,.12) !important;
+}
+.logo .crown{
+  color:#ffc21a !important;
+  animation:none !important;
+  text-shadow:0 2px 5px rgba(0,0,0,.55),0 0 12px rgba(255,194,26,.35) !important;
+}
+
+/* Premium shadow for the rest of the text */
+.title,
+.date,
+.store-box h2,
+.download h2,
+.footer,
+.update-card h2,
+.update-card p,
+.update-icon,
+.coolcard h2,
+.coolcard p,
+.coolcard h3,
+#onlineUsers,
+#cd,
+#status,
+.top,
+.err{
+  text-shadow:
+    0 2px 4px rgba(0,0,0,.75),
+    0 0 10px rgba(255,255,255,.10);
+}
+
+/* Keep the main title shadow fixed instead of animated */
+.title{
+  animation:titleIn .7s ease both;
+  text-shadow:0 3px 18px rgba(0,0,0,.75),0 0 12px rgba(255,255,255,.10) !important;
+}
+
+/* Store title shadow stays fixed; only its color follows the 7-color light */
+.store-box h2{
+  animation:none !important;
+  text-shadow:0 2px 5px rgba(0,0,0,.75),0 0 14px color-mix(in srgb,var(--cycle) 35%,transparent) !important;
+}
+</style>
+
+
+<style id="all-text-3d-premium">
+/* Premium 3D typography for all visible text */
+body{
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+.logo,
+.title,
+.date,
+.store-box h2,
+.download h2,
+.footer,
+.update-card h2,
+.update-card p,
+.update-close,
+.coolcard h2,
+.coolcard p,
+.coolcard h3,
+#onlineUsers,
+#cd,
+#status,
+#watchBtn,
+#continueBtn,
+.top,
+.in,
+.btnL,
+.err,
+.btn{
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.18),
+    0 2px 0 rgba(0,0,0,.55),
+    0 4px 7px rgba(0,0,0,.58),
+    0 0 12px rgba(255,255,255,.08);
+  letter-spacing:.15px;
+}
+
+/* Stronger dimensional treatment for headings */
+.title,
+.store-box h2,
+.download h2,
+.update-card h2,
+.coolcard h2,
+.top{
+  font-weight:900;
+  transform:translateZ(0);
+  filter:drop-shadow(0 4px 5px rgba(0,0,0,.35));
+}
+
+/* Buttons get a raised 3D text look */
+.btn,
+.btnL,
+.update-close,
+#watchBtn,
+#continueBtn{
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.28),
+    0 2px 0 rgba(0,0,0,.38),
+    0 4px 8px rgba(0,0,0,.35);
+}
+
+/* Input text and placeholder */
+.in{
+  text-shadow:0 2px 4px rgba(0,0,0,.55);
+}
+.in::placeholder{
+  color:#9eabc0;
+  text-shadow:0 1px 3px rgba(0,0,0,.55);
+}
+
+/* Small status/footer text remains subtle, not overly bright */
+.date,
+.footer,
+.update-card p,
+.coolcard p,
+#status,
+.err{
+  text-shadow:
+    0 1px 2px rgba(0,0,0,.75),
+    0 0 7px rgba(255,255,255,.06);
+}
+
+/* Keep the logo's fixed color while giving it depth */
+.logo{
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.18),
+    0 2px 0 rgba(0,0,0,.55),
+    0 5px 9px rgba(0,0,0,.65),
+    0 0 14px rgba(255,255,255,.10) !important;
+}
+</style>
+
+
+<style id="old-ff-premium">
+/* Premium treatment for the Old Free Fire Private Server title */
+.title{
+  position:relative;
+  width:fit-content;
+  max-width:calc(100% - 24px);
+  margin:25px auto 12px !important;
+  padding:14px 20px !important;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:18px;
+  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.018));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    0 10px 24px rgba(0,0,0,.28),
+    0 0 20px rgba(255,48,56,.08);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  letter-spacing:.3px;
+}
+.title::before{content:"";display:none;
+}
+@media(max-width:520px){
+  .title{
+    max-width:calc(100% - 18px);
+    padding:13px 14px !important;
+    border-radius:16px;
+  }
+}
+</style>
+
+
+<style id="private-server-3d-text">
+/* 3D animated text for "Old Free Fire Private Server 2022" */
+.title{
+  animation:title3DFloat .9s ease both, title3DBob 3s ease-in-out 1s infinite !important;
+  transform-origin:center;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.22),
+    0 3px 0 rgba(0,0,0,.65),
+    0 6px 10px rgba(0,0,0,.70),
+    0 0 18px rgba(255,255,255,.10) !important;
+}
+@keyframes title3DFloat{
+  from{opacity:0;transform:perspective(700px) translateY(14px) rotateX(12deg) scale(.96)}
+  to{opacity:1;transform:perspective(700px) translateY(0) rotateX(0) scale(1)}
+}
+@keyframes title3DBob{
+  0%,100%{
+    transform:perspective(700px) translateY(0) rotateX(0deg) rotateY(0deg);
+    text-shadow:0 1px 0 rgba(255,255,255,.22),0 3px 0 rgba(0,0,0,.65),0 6px 10px rgba(0,0,0,.70),0 0 18px rgba(255,255,255,.10);
+  }
+  50%{
+    transform:perspective(700px) translateY(-3px) rotateX(2deg) rotateY(-1deg);
+    text-shadow:0 2px 0 rgba(255,255,255,.20),0 5px 0 rgba(0,0,0,.70),0 10px 15px rgba(0,0,0,.72),0 0 22px rgba(255,255,255,.14);
+  }
+}
+</style>
+
+
+<style id="private-server-quality-upgrade">
+.title{
+  font-weight:950 !important;
+  letter-spacing:.5px !important;
+  line-height:1.18 !important;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.25),
+    0 2px 0 rgba(0,0,0,.70),
+    0 4px 0 rgba(0,0,0,.45),
+    0 8px 14px rgba(0,0,0,.72),
+    0 0 22px rgba(255,255,255,.12) !important;
+  filter:drop-shadow(0 5px 7px rgba(0,0,0,.35));
+}
+.title::before{
+  height:3px !important;
+  opacity:.9 !important;
+  box-shadow:0 0 14px var(--cycle),0 0 25px color-mix(in srgb,var(--cycle) 35%,transparent) !important;
+}
+@keyframes title3DBob{
+  0%,100%{
+    transform:perspective(700px) translateY(0) rotateX(0deg) rotateY(0deg) scale(1);
+    text-shadow:0 1px 0 rgba(255,255,255,.25),0 2px 0 rgba(0,0,0,.70),0 4px 0 rgba(0,0,0,.45),0 8px 14px rgba(0,0,0,.72),0 0 22px rgba(255,255,255,.12);
+  }
+  50%{
+    transform:perspective(700px) translateY(-3px) rotateX(1.5deg) rotateY(-.7deg) scale(1.008);
+    text-shadow:0 2px 0 rgba(255,255,255,.22),0 3px 0 rgba(0,0,0,.72),0 6px 0 rgba(0,0,0,.48),0 11px 18px rgba(0,0,0,.75),0 0 26px rgba(255,255,255,.15);
+  }
+}
+</style>
+
+
+<style id="ultra-title-quality">
+/* Ultra-high-quality presentation for the Old Free Fire Private Server 2022 title */
+.title{
+  position:relative;
+  isolation:isolate;
+  font-size:clamp(25px,5vw,36px) !important;
+  font-weight:950 !important;
+  letter-spacing:.7px !important;
+  line-height:1.16 !important;
+  color:#fff !important;
+  padding:16px 22px !important;
+  border-radius:20px !important;
+  border:1px solid rgba(255,255,255,.15) !important;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.025) 48%,rgba(0,0,0,.16)),
+    radial-gradient(circle at 50% 0%,rgba(255,255,255,.08),transparent 58%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.20),
+    inset 0 -10px 24px rgba(0,0,0,.12),
+    0 8px 0 rgba(0,0,0,.28),
+    0 16px 30px rgba(0,0,0,.48),
+    0 0 26px rgba(255,48,56,.10);
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.30),
+    0 3px 0 rgba(0,0,0,.72),
+    0 5px 0 rgba(0,0,0,.38),
+    0 9px 16px rgba(0,0,0,.82),
+    0 0 22px rgba(255,255,255,.13);
+  transform:perspective(900px) translateZ(0);
+  animation:ultraTitleIn .8s cubic-bezier(.2,.8,.2,1) both,
+            ultraTitleFloat 3.4s ease-in-out 1s infinite;
+}
+.title::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:1px;
+  border-radius:19px;
+  background:linear-gradient(115deg,transparent 15%,rgba(255,255,255,.10) 42%,transparent 62%);
+  transform:translateX(-120%);
+  animation:titleShine 4.5s ease-in-out 1.2s infinite;
+  pointer-events:none;
+}
+.title::after{
+  content:"";
+  position:absolute;
+  left:12%;
+  right:12%;
+  bottom:-2px;
+  height:3px;
+  border-radius:99px;
+  background:linear-gradient(90deg,transparent,var(--cycle) 28%,#fff 50%,var(--cycle) 72%,transparent);
+  box-shadow:0 0 10px var(--cycle),0 0 24px color-mix(in srgb,var(--cycle) 45%,transparent);
+  opacity:.95;
+  transition:background 1s ease,box-shadow 1s ease;
+}
+@keyframes ultraTitleIn{
+  from{opacity:0;transform:perspective(900px) translateY(18px) rotateX(14deg) scale(.94)}
+  to{opacity:1;transform:perspective(900px) translateY(0) rotateX(0) scale(1)}
+}
+@keyframes ultraTitleFloat{
+  0%,100%{transform:perspective(900px) translateY(0) rotateX(0) rotateY(0) scale(1)}
+  50%{transform:perspective(900px) translateY(-3px) rotateX(1deg) rotateY(-.5deg) scale(1.008)}
+}
+@keyframes titleShine{
+  0%,55%{transform:translateX(-120%)}
+  75%,100%{transform:translateX(120%)}
+}
+@media(max-width:520px){
+  .title{
+    font-size:clamp(22px,7vw,29px) !important;
+    padding:14px 15px !important;
+    border-radius:17px !important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .title,.title::before{animation:none!important}
+}
+</style>
+
+
+<style id="qhd-1440-upgrade">
+/* QHD / 1440px premium rendering */
+.title{
+  max-width:920px !important;
+  font-size:clamp(28px,3.2vw,42px) !important;
+  padding:18px 28px !important;
+  border-radius:22px !important;
+  letter-spacing:.9px !important;
+  line-height:1.12 !important;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.32),
+    0 3px 0 rgba(0,0,0,.78),
+    0 6px 0 rgba(0,0,0,.42),
+    0 10px 20px rgba(0,0,0,.88),
+    0 0 28px rgba(255,255,255,.16) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.24),
+    inset 0 -12px 28px rgba(0,0,0,.14),
+    0 8px 0 rgba(0,0,0,.30),
+    0 18px 38px rgba(0,0,0,.52),
+    0 0 32px rgba(255,48,56,.12) !important;
+  transform:translateZ(0);
+  backface-visibility:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+.title::before{
+  background:linear-gradient(115deg,transparent 12%,rgba(255,255,255,.14) 42%,transparent 60%) !important;
+}
+.title::after{
+  height:4px !important;
+  left:10% !important;
+  right:10% !important;
+  box-shadow:0 0 12px var(--cycle),0 0 28px color-mix(in srgb,var(--cycle) 50%,transparent) !important;
+}
+@media(min-width:1000px){
+  .title{font-size:40px !important}
+}
+</style>
+
+
+<style id="owner-online-style">
+.owner-online{
+  margin-top:10px;
+  display:inline-block;
+  padding:7px 14px;
+  border-radius:999px;
+  color:#ffd95a;
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:.4px;
+  background:rgba(255,194,26,.07);
+  border:1px solid rgba(255,194,26,.22);
+  text-shadow:0 2px 4px rgba(0,0,0,.65),0 0 10px rgba(255,194,26,.18);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 6px 16px rgba(0,0,0,.18);
+  animation:ownerOnlinePulse 2s ease-in-out infinite;
+}
+@keyframes ownerOnlinePulse{
+  0%,100%{transform:translateY(0);box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 6px 16px rgba(0,0,0,.18)}
+  50%{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 8px 20px rgba(255,194,26,.12)}
+}
+</style>
+
+
+<style id="owner-status-cycle">
+#ownerOnline{
+  transition:opacity .35s ease, transform .35s ease, color .35s ease;
+}
+#ownerOnline.owner-offline{
+  color:#ff6b6b;
+  border-color:rgba(255,80,80,.24);
+  background:rgba(255,60,60,.07);
+  text-shadow:0 2px 4px rgba(0,0,0,.65),0 0 10px rgba(255,70,70,.18);
+}
+</style>
+
+
+<style id="verification-delay">#humanVerifyOverlay,#verificationSuccess,#verificationFail{display:none!important}</style>
+<style id="premium-smooth-verification">
+:root{--v-bg:#070b14;--v-card:rgba(12,20,34,.88);--v-line:rgba(255,255,255,.10);--v-text:#f7fbff;--v-muted:#9eacbd;--v-accent:#59f59a;--v-danger:#ff5f6d}
+#humanVerifyOverlay,#verificationSuccess,#verificationFail{
+ position:fixed;inset:0;z-index:100000;display:flex;align-items:center;justify-content:center;
+ padding:20px;background:rgba(2,5,12,.78);backdrop-filter:blur(16px);
+ -webkit-backdrop-filter:blur(16px);box-sizing:border-box
+}
+#humanVerifyCard,#verificationSuccessCard,#verificationFailCard{
+ width:min(390px,92vw);box-sizing:border-box;padding:28px 22px 22px;border-radius:28px;
+ background:linear-gradient(145deg,rgba(19,31,49,.96),rgba(7,13,24,.96));
+ border:1px solid var(--v-line);box-shadow:0 25px 80px rgba(0,0,0,.58),0 0 45px rgba(89,245,154,.08);
+ color:var(--v-text);text-align:center;overflow:hidden
+}
+#humanVerifyCard{animation:vCardIn .32s cubic-bezier(.2,.8,.2,1)}
+#humanVerifyCard h2,#verificationSuccessCard h2,#verificationFailCard h2{margin:0 0 8px;font-size:25px;letter-spacing:.1px}
+#humanVerifyCard p,#verificationSuccessCard p,#verificationFailCard p{margin:0 0 18px;color:var(--v-muted);font-size:14px;line-height:1.5}
+#verificationNotice{
+ display:inline-block;margin:2px 0 15px;padding:8px 12px;border-radius:999px;
+ background:rgba(89,245,154,.08);border:1px solid rgba(89,245,154,.18);
+ color:#baffd2;font-size:12px;font-weight:900;letter-spacing:.2px
+}
+#taskArea{display:grid;gap:10px}
+.taskBtn,.shapeChoice{
+ width:100%;min-height:50px;padding:11px;border:1px solid var(--v-line);border-radius:15px;
+ background:rgba(255,255,255,.045);color:#fff;font-weight:850;cursor:pointer;
+ transition:transform .12s ease,background .12s ease,border-color .12s ease
+}
+.taskBtn:active,.shapeChoice:active,.colorChoice:active,.mapCell:active{transform:scale(.97)}
+.colorGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.colorChoice{height:58px;border:2px solid rgba(255,255,255,.12);border-radius:15px;cursor:pointer;transition:transform .12s ease}
+.mapGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:8px;border-radius:16px;background:rgba(0,0,0,.24)}
+.mapCell{aspect-ratio:1;border:1px solid var(--v-line);border-radius:8px;background:#121e31;color:#fff;cursor:pointer;font-size:20px;transition:transform .12s ease}
+.shapeGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.shapeChoice{font-size:24px}
+#taskStatus{min-height:20px;margin-top:12px;font-size:13px;font-weight:750}
+#humanContinue{
+ width:100%;margin-top:14px;padding:13px;border:0;border-radius:15px;background:#2a3340;
+ color:#778291;font-size:14px;font-weight:900;cursor:not-allowed
+}
+#humanContinue.ready{background:linear-gradient(135deg,#68ffa4,#20d66a);color:#04120a;cursor:pointer;box-shadow:0 10px 28px rgba(32,214,106,.18)}
+#verificationSuccess,#verificationFail{display:none;background:rgba(0,0,0,.82)}
+#verificationSuccessCard,#verificationFailCard{animation:vCardIn .32s cubic-bezier(.2,.8,.2,1)}
+#successEmoji,#verificationFailEmoji{
+ width:82px;height:82px;margin:0 auto 16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:46px
+}
+#successEmoji{background:rgba(89,245,154,.10);border:1px solid rgba(89,245,154,.24);box-shadow:0 0 34px rgba(89,245,154,.13)}
+#verificationFailCard{border-color:rgba(255,95,109,.18)}
+#verificationFailEmoji{background:rgba(255,95,109,.08);border:1px solid rgba(255,95,109,.20)}
+#successOk{
+ width:100%;padding:13px;border:0;border-radius:15px;background:linear-gradient(135deg,#68ffa4,#20d66a);
+ color:#04120a;font-size:14px;font-weight:950;cursor:pointer;box-shadow:0 10px 28px rgba(32,214,106,.18)
+}
+@keyframes vCardIn{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){#humanVerifyCard,#verificationSuccessCard,#verificationFailCard{animation:none!important}}
+</style>
+
+<style id="smooth-premium-effects">
+/* Lightweight GPU-friendly effects */
+#humanVerifyCard,#verificationSuccessCard,#verificationFailCard{
+  position:relative;
+  isolation:isolate;
+}
+#humanVerifyCard::before,#verificationSuccessCard::before,#verificationFailCard::before{content:none!important;display:none!important}
+#humanVerifyCard::after,#verificationSuccessCard::after,#verificationFailCard::after{
+  content:"";position:absolute;width:110px;height:110px;border-radius:50%;
+  left:-45px;top:-45px;background:rgba(89,245,154,.10);filter:blur(28px);
+  animation:vGlow 4s ease-in-out infinite alternate;pointer-events:none;
+}
+#verificationFailCard::after{background:rgba(255,95,109,.10)}
+#verificationSuccessCard::after{background:rgba(89,245,154,.14)}
+
+#humanVerifyCard h2,#verificationSuccessCard h2,#verificationFailCard h2{
+  animation:vTextFloat 3.2s ease-in-out infinite;
+  text-shadow:0 0 18px rgba(255,255,255,.10);
+}
+#taskPrompt,#verificationSuccessCard p,#verificationFailCard p{
+  animation:vTextFloat 3.8s ease-in-out .15s infinite;
+}
+#verificationNotice{
+  animation:vNotice 2.2s ease-in-out infinite;
+}
+.taskBtn,.shapeChoice,.colorChoice,.mapCell,#humanContinue,#successOk{
+  will-change:transform;
+}
+.taskBtn:hover,.shapeChoice:hover,.colorChoice:hover,.mapCell:hover,#successOk:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.08);
+}
+#humanContinue.ready{
+  animation:vButtonPulse 2.2s ease-in-out infinite;
+}
+#successOk{
+  animation:vButtonPulse 2.2s ease-in-out infinite;
+}
+#successEmoji{
+  animation:vSuccess 2.8s ease-in-out infinite;
+}
+#verificationFailEmoji{
+  animation:vFail 2.6s ease-in-out infinite;
+}
+#taskStatus{
+  animation:vStatus 1.8s ease-in-out infinite;
+}
+
+  100%{background-position:-80% 0}
+}
+@keyframes vGlow{
+  0%{transform:translate3d(0,0,0);opacity:.45}
+  100%{transform:translate3d(18px,12px,0);opacity:.9}
+}
+@keyframes vTextFloat{
+  0%,100%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(0,-2px,0)}
+}
+@keyframes vNotice{
+  0%,100%{transform:translate3d(0,0,0);box-shadow:0 0 0 rgba(89,245,154,0)}
+  50%{transform:translate3d(0,-2px,0);box-shadow:0 5px 20px rgba(89,245,154,.08)}
+}
+@keyframes vButtonPulse{
+  0%,100%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(0,-2px,0)}
+}
+@keyframes vSuccess{
+  0%,100%{transform:scale(1) rotate(0deg)}
+  50%{transform:scale(1.04) rotate(2deg)}
+}
+@keyframes vFail{
+  0%,100%{transform:translate3d(0,0,0)}
+  35%{transform:translate3d(-2px,0,0)}
+  65%{transform:translate3d(2px,0,0)}
+}
+@keyframes vStatus{
+  0%,100%{opacity:.72}
+  50%{opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  #humanVerifyCard::before,#verificationSuccessCard::before,#verificationFailCard::before,
+  #humanVerifyCard::after,#verificationSuccessCard::after,#verificationFailCard::after,
+  #humanVerifyCard h2,#verificationSuccessCard h2,#verificationFailCard h2,
+  #taskPrompt,#verificationSuccessCard p,#verificationFailCard p,
+  #verificationNotice,#humanContinue.ready,#successOk,#successEmoji,#verificationFailEmoji,#taskStatus{
+    animation:none!important
+  }
+  .taskBtn:hover,.shapeChoice:hover,.colorChoice:hover,.mapCell:hover,#successOk:hover{transform:none}
+}
+</style>
+
+<style id="ultra-smooth-performance">
+/* Extra-smooth, lightweight motion: transform/opacity only */
+#humanVerifyCard,#verificationSuccessCard,#verificationFailCard{
+  animation:vSoftIn .42s cubic-bezier(.22,.8,.22,1) both;
+  will-change:transform,opacity;
+}
+#humanVerifyCard h2,#verificationSuccessCard h2,#verificationFailCard h2{
+  animation:vGentleFloat 4.5s ease-in-out infinite;
+  will-change:transform;
+}
+#taskPrompt{
+  animation:vGentleFloat 5s ease-in-out .2s infinite;
+  will-change:transform;
+}
+#verificationNotice{
+  animation:vGentleFloat 4.8s ease-in-out .1s infinite;
+  will-change:transform;
+}
+.taskBtn,.shapeChoice,.colorChoice,.mapCell,#humanContinue,#successOk{
+  transition:transform .18s cubic-bezier(.2,.8,.2,1),opacity .18s ease,filter .18s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.taskBtn:hover,.shapeChoice:hover,.colorChoice:hover,.mapCell:hover,#successOk:hover{
+  transform:translateY(-1px);
+}
+.taskBtn:active,.shapeChoice:active,.colorChoice:active,.mapCell:active,#humanContinue.ready:active,#successOk:active{
+  transform:scale(.985);
+}
+#humanContinue.ready,#successOk{
+  animation:vGentlePulse 3.2s ease-in-out infinite;
+  will-change:transform;
+}
+#successEmoji{
+  animation:vSuccessFloat 4s ease-in-out infinite;
+  will-change:transform;
+}
+#verificationFailEmoji{
+  animation:vFailFloat 3.8s ease-in-out infinite;
+  will-change:transform;
+}
+#taskStatus{
+  transition:opacity .2s ease;
+}
+@keyframes vSoftIn{
+  from{opacity:0;transform:translate3d(0,8px,0) scale(.985)}
+  to{opacity:1;transform:translate3d(0,0,0) scale(1)}
+}
+@keyframes vGentleFloat{
+  0%,100%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(0,-1.5px,0)}
+}
+@keyframes vGentlePulse{
+  0%,100%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(0,-1px,0)}
+}
+@keyframes vSuccessFloat{
+  0%,100%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(0,-2px,0) scale(1.025)}
+}
+@keyframes vFailFloat{
+  0%,100%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(0,-1.5px,0)}
+}
+@media (prefers-reduced-motion:reduce){
+  #humanVerifyCard,#verificationSuccessCard,#verificationFailCard,
+  #humanVerifyCard h2,#verificationSuccessCard h2,#verificationFailCard h2,
+  #taskPrompt,#verificationNotice,#humanContinue.ready,#successOk,
+  #successEmoji,#verificationFailEmoji{animation:none!important}
+}
+</style>
+
+<style id="animation-scope-final">
+/* Keep motion ONLY on the requested controls. */
+body *{
+  animation:none !important;
+}
+body *::before,
+body *::after{
+  animation:none !important;
+}
+
+/* Download-section buttons */
+.btn.red,
+.btn.yellow{
+  animation:buttonFloat 2.2s ease-in-out infinite !important;
+}
+.btn.yellow{
+  animation-delay:.35s !important;
+}
+
+/* Side fire button */
+.fire{
+  animation:fireFloat 2.4s ease-in-out infinite !important;
+}
+
+/* Profile button / popup */
+.update-overlay.show{
+  animation:fadeIn .25s ease !important;
+}
+.update-card{
+  animation:popIn .3s ease !important;
+}
+.update-icon{
+  animation:spinPulse 1.5s ease-in-out infinite !important;
+}
+
+/* Keep the rest of the page visually static. */
+#humanVerifyCard,
+#verificationSuccessCard,
+#verificationFailCard,
+#loginCard,
+.title,
+.store-box,
+.download,
+.date,
+#taskPrompt,
+#taskStatus,
+#verificationNotice{
+  animation:none !important;
+}
+</style>
+<style id="premium-profile-ui">
+.profile-btn{
+  width:50px;height:50px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(255,255,255,.13);
+  background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+  color:#fff;cursor:pointer;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 8px 22px rgba(0,0,0,.28);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+  -webkit-tap-highlight-color:transparent;
+  animation:none!important;
+}
+.profile-btn:hover{transform:translateY(-2px);border-color:rgba(255,194,26,.55);box-shadow:0 10px 28px rgba(255,194,26,.14),inset 0 1px 0 rgba(255,255,255,.12)}
+.profile-btn:active{transform:scale(.95)}
+.profile-icon{font-size:25px;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,.55));animation:none!important}
+
+.profile-overlay{
+  position:fixed;inset:0;display:none;align-items:center;justify-content:center;
+  padding:20px;background:rgba(0,0,0,.72);backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);z-index:10001;
+}
+.profile-overlay.show{display:flex}
+.profile-card{
+  width:min(430px,94vw);position:relative;overflow:hidden;
+  padding:28px 22px 22px;border-radius:28px;
+  background:linear-gradient(145deg,#172943,#060c17 72%);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 30px 90px rgba(0,0,0,.78),0 0 42px rgba(255,194,26,.12);
+  text-align:center;
+  animation:profilePop .28s cubic-bezier(.2,.8,.2,1) both;
+}
+.profile-card::before{
+  content:"";position:absolute;inset:-45%;
+  background:radial-gradient(circle,rgba(255,194,26,.12),transparent 42%);
+  pointer-events:none;
+}
+.profile-card>*{position:relative;z-index:1}
+.profile-avatar{
+  width:92px;height:92px;margin:0 auto 14px;border-radius:26px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  background:linear-gradient(145deg,rgba(255,194,26,.18),rgba(255,255,255,.05));
+  border:1px solid rgba(255,194,26,.38);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 12px 30px rgba(0,0,0,.3);
+  animation:none!important;
+}
+.profile-avatar img{width:100%;height:100%;display:block;object-fit:cover;animation:none!important}
+.profile-name{color:#ffcf45;font-size:17px;font-weight:950;letter-spacing:.4px;margin:-1px 0 18px;text-shadow:0 2px 8px rgba(255,194,26,.2)}
+.profile-actions{display:grid;gap:10px;margin-top:18px}
+.profile-logout,.profile-close{width:100%;padding:13px;border:0;border-radius:16px;font-size:15px;font-weight:950;cursor:pointer;transition:transform .15s ease,filter .15s ease}
+.profile-logout{background:linear-gradient(135deg,#ff4b4b,#d91f2f);color:#fff;box-shadow:0 10px 26px rgba(255,48,56,.20)}
+.profile-close{margin-top:0;background:linear-gradient(135deg,#ffcf45,#ff9f0a);color:#17100a;box-shadow:0 10px 26px rgba(255,174,20,.18)}
+.profile-logout:active,.profile-close:active{transform:scale(.97);filter:brightness(.96)}
+.profile-card h2{font-size:25px;margin-bottom:5px;text-shadow:0 2px 5px rgba(0,0,0,.65)}
+.profile-sub{color:#aebbd0;font-size:13px;margin-bottom:20px}
+.profile-info{
+  display:grid;gap:12px;text-align:left;
+}
+.profile-field{
+  padding:15px 16px;border-radius:17px;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+}
+.profile-label{
+  display:block;color:#8797ae;font-size:11px;font-weight:800;
+  text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;
+}
+.profile-value{
+  display:block;color:#fff;font-size:17px;font-weight:900;
+  word-break:break-word;text-shadow:0 2px 4px rgba(0,0,0,.55);
+}
+@keyframes profilePop{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+@media(max-width:520px){
+  .profile-btn{width:46px;height:46px}
+  .profile-card{padding:25px 17px 18px;border-radius:24px}
+}
+</style>
+
+<style id="final-no-animation">
+/* Disable all CSS animations/transitions, including the password/login page. */
+*, *::before, *::after {
+  animation: none !important;
+  transition: none !important;
+}
+html {
+  scroll-behavior: auto !important;
+}
+</style>
+
+<style id="rg-web-vpn-customizer-style">
+#rgVpnOpen{
+  position:fixed;right:14px;bottom:14px;z-index:99990;
+  border:0;border-radius:14px;padding:11px 14px;
+  background:#151b27;color:#fff;font-weight:900;font-size:13px;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);cursor:pointer
+}
+#rgVpnPanel{
+  position:fixed;inset:0;z-index:99991;display:none;align-items:center;
+  justify-content:center;padding:16px;background:rgba(0,0,0,.72);
+  box-sizing:border-box
+}
+#rgVpnPanel.show{display:flex}
+#rgVpnCard{
+  width:min(430px,94vw);max-height:88vh;overflow:auto;
+  background:#0b111c;color:#fff;border:1px solid rgba(255,255,255,.12);
+  border-radius:22px;padding:20px;box-sizing:border-box
+}
+#rgVpnCard h2{margin:0 0 5px;font-size:22px}
+#rgVpnCard .rgVpnSub{color:#9eacbd;font-size:12px;margin-bottom:18px}
+.rgVpnRow{margin:12px 0}
+.rgVpnRow label{display:block;font-size:12px;font-weight:800;color:#b8c4d5;margin-bottom:6px}
+.rgVpnRow input[type="color"]{width:100%;height:42px;border:0;background:transparent}
+.rgVpnRow input[type="text"],.rgVpnRow select{
+  width:100%;box-sizing:border-box;padding:11px 12px;border-radius:12px;
+  border:1px solid rgba(255,255,255,.12);background:#111a28;color:#fff;outline:0
+}
+.rgVpnBtns{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px}
+.rgVpnBtns button{border:0;border-radius:13px;padding:12px;font-weight:900;cursor:pointer}
+#rgVpnSave{background:#20d66a;color:#04120a}
+#rgVpnReset{background:#252f3d;color:#fff}
+#rgVpnClose{width:100%;margin-top:9px;background:#d92f3f;color:#fff}
+</style>
+
+</head>
+<body>
+<button id="rgVpnOpen" type="button">⚙ RG WEB VPN</button>
+<div id="rgVpnPanel">
+  <div id="rgVpnCard">
+    <h2>RG WEB VPN</h2>
+    <div class="rgVpnSub">Customize this Login website on this browser.</div>
+
+    <div class="rgVpnRow">
+      <label>Background Color</label>
+      <input id="rgVpnBg" type="color" value="#070b14">
+    </div>
+    <div class="rgVpnRow">
+      <label>Text Color</label>
+      <input id="rgVpnText" type="color" value="#ffffff">
+    </div>
+    <div class="rgVpnRow">
+      <label>Button Color</label>
+      <input id="rgVpnButton" type="color" value="#ff3038">
+    </div>
+    <div class="rgVpnRow">
+      <label>Button Vertical Position</label>
+      <select id="rgVpnPosition">
+        <option value="normal">Normal</option>
+        <option value="higher">Higher</option>
+        <option value="lower">Lower</option>
+      </select>
+    </div>
+    <div class="rgVpnRow">
+      <label>Effect</label>
+      <select id="rgVpnEffect">
+        <option value="none">None</option>
+        <option value="pulse">Pulse</option>
+        <option value="float">Float</option>
+      </select>
+    </div>
+    <div class="rgVpnRow">
+      <label>Background Image URL</label>
+      <input id="rgVpnImage" type="text" placeholder="https://...">
+    </div>
+
+    <div class="rgVpnBtns">
+      <button id="rgVpnSave" type="button">SAVE</button>
+      <button id="rgVpnReset" type="button">RESET</button>
+    </div>
+    <button id="rgVpnClose" type="button">CLOSE</button>
+  </div>
+</div>
+<div id="verificationFail">
+<div id="verificationFailCard">
+<div id="verificationFailEmoji">❌</div>
+<h2>Your verification failed</h2>
+<p>Please leave this page and open the website again to start verification from the beginning.</p>
+</div></div><div id="verificationSuccess">
+<div id="verificationSuccessCard">
+<div id="successEmoji">🎉</div>
+<h2>Verification Successful!</h2>
+<p>All 5 verification tasks have been completed successfully.</p>
+<button id="successOk">OK ✓</button>
+</div></div><div id="humanVerifyOverlay">
+<div id="humanVerifyCard">
+<div style="font-size:42px;margin-bottom:8px">🛡️</div>
+<h2>Human Verification</h2>
+<div id="verificationNotice">⚠️ Please Complete Verification</div>
+<p id="taskPrompt">Complete the random task below.</p>
+<div id="taskArea"></div>
+<div id="taskStatus" style="min-height:20px;margin-top:12px;color:#ffcf66"></div>
+<button id="humanContinue" disabled>Continue</button>
+</div></div><div id='loginOverlay'><div id='loginCard'><div class='top'>🔐 Login</div><input id='u' class='in' placeholder='Username'><input id='p' class='in' type='password' placeholder='Password'><button class='btnL' onclick='login()'>Login</button><a class='btnL' href='https://whatsapp.com/channel/0029VbDKMcl5EjxvYVL8HG1n' target='_blank' style='display:block;text-align:center;text-decoration:none;margin-top:10px'>Username Password Access</a><div id='e' class='err'></div></div></div>
+<div class="profile-overlay" id="profileOverlay" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+  <div class="profile-card">
+    <div class="profile-avatar">
+      <img src="https://i.supaimg.com/d9c7f586-ce17-4c79-9667-6ede2824ff5b/c4d18ec2-dd7a-4c5f-b3b9-d522d6575661.jpg" alt="RG GAMER BOY FF Profile">
+    </div>
+    <h2 id="profileTitle">My Profile</h2>
+    <div class="profile-name">RG GAMER BOY FF</div>
+    <div class="profile-info">
+      <div class="profile-field">
+        <span class="profile-label">Username</span>
+        <span class="profile-value" id="profileUsername">—</span>
+      </div>
+      <div class="profile-field">
+        <span class="profile-label">Password</span>
+        <span class="profile-value" id="profilePassword">—</span>
+      </div>
+    </div>
+    <div class="profile-actions">
+      <button class="profile-logout" id="profileLogout" type="button">Logout</button>
+      <button class="profile-close" id="profileClose" type="button">Close</button>
+    </div>
+  </div>
+</div>
+<div class="page"><div class="main">
+<header class="header">
+<button class="profile-btn" id="profileButton" type="button" aria-label="Open profile" title="Profile">
+  <span class="profile-icon">👤</span>
+</button>
+<div class="logo"><span class="crown">♛</span>RG GAMER BOY FF</div>
+<div class="fire" aria-label="Fire"><span>🔥</span></div>
+</header>
+
+<h1 class="title">🔥 Old Free Fire Private Server 2022</h1>
+<div class="date">8 October Update <span class="dot">•</span> Latest APK</div>
+
+<section class="store-box"><div><h2>RG GAMER BOY FF STORE</h2><div id="onlineUsers" class="online-premium" style="margin-top:18px;font-size:20px;color:#7CFF7C;font-weight:bold">🟢 Online Users: <span id="onlineCount">—</span></div><div id="ownerOnline" class="owner-online">👑 Owner Online</div></div></section>
+
+<!-- Firebase Realtime Database: REAL online-user presence -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+  import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
+  import { getDatabase, ref, onValue, onDisconnect, set, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCdboIM-Tzc9ke3W_RKmR7XzzPtM0w_g5M",
+    authDomain: "rg-gamer-boy-ff-8957c.firebaseapp.com",
+    databaseURL: "https://rg-gamer-boy-ff-8957c-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "rg-gamer-boy-ff-8957c",
+    storageBucket: "rg-gamer-boy-ff-8957c.firebasestorage.app",
+    messagingSenderId: "218426825155",
+    appId: "1:218426825155:web:3f71223cba6faba29c8576",
+    measurementId: "G-9ZW0KF4PZT"
+  };
+
+  const countEl = document.getElementById("onlineCount");
+  const show = value => { if (countEl) countEl.textContent = String(value); };
+  const unavailable = () => show("—");
+
+  try {
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getDatabase(app);
+    const connectedRef = ref(db, ".info/connected");
+    const onlineUsersRef = ref(db, "onlineUsers");
+
+    // Count ONLY Firebase presence records. No fake/random/localStorage count.
+    onValue(onlineUsersRef, snapshot => {
+      show(snapshot.exists() ? snapshot.size : 0);
+    }, error => {
+      console.error("Firebase online-user read failed:", error);
+      unavailable();
+    });
+
+    onAuthStateChanged(auth, user => {
+      if (!user) return;
+
+      const myPresenceRef = ref(db, `onlineUsers/${user.uid}`);
+      onValue(connectedRef, async snapshot => {
+        if (snapshot.val() !== true) {
+          unavailable();
+          return;
+        }
+
+        try {
+          // Remove this visitor automatically when their connection closes.
+          await onDisconnect(myPresenceRef).remove();
+          await set(myPresenceRef, {
+            online: true,
+            connectedAt: serverTimestamp()
+          });
+        } catch (error) {
+          console.error("Firebase presence setup failed:", error);
+          unavailable();
+        }
+      });
+    });
+
+    // One unique Firebase UID per visitor/browser session.
+    signInAnonymously(auth).catch(error => {
+      console.error("Firebase Anonymous Authentication failed:", error);
+      unavailable();
+    });
+  } catch (error) {
+    console.error("Firebase initialization failed:", error);
+    unavailable();
+  }
+</script>
+
+<section class="download">
+<h2>📥 Download Files</h2>
+
+<a class="btn red" href="https://rggamerboyff01.github.io/RG-GAMER-BOY-FF-/">
+📱 Download APK &amp; Key <span class="arrow">›</span>
+</a>
+
+<a class="btn yellow" href="https://www.youtube.com/@RG_GAMER_BOY_FF">
+🌐 Subscribe Channel <span class="arrow">›</span>
+</a>
+<a class="btn red" href="https://whatsapp.com/channel/0029VbDKMcl5EjxvYVL8HG1n" target="_blank">
+💚 WhatsApp <span class="arrow">›</span>
+</a>
+</section>
+
+<footer class="footer">🛡️ ©RG GAMER BOY FF OFFICIAL</footer>
+</div></div>
+<div class="update-overlay" id="updateOverlay" role="dialog" aria-modal="true" aria-labelledby="updateTitle">
+  <div class="update-card">
+    <div class="update-icon">⚙️</div>
+    <h2 id="updateTitle">Website Currently Updating</h2>
+    <p>The website is currently being updated. Please check again later.</p>
+    <button class="update-close" id="updateClose">OK</button>
+  </div>
+</div>
+<script>
+const profileButton=document.getElementById('profileButton');
+const profileOverlay=document.getElementById('profileOverlay');
+const profileClose=document.getElementById('profileClose');
+const profileUsername=document.getElementById('profileUsername');
+const profilePassword=document.getElementById('profilePassword');
+const profileLogout=document.getElementById('profileLogout');
+
+function showProfile(){
+  profileUsername.textContent = (typeof USERNAME !== 'undefined' ? USERNAME : '—');
+  profilePassword.textContent = (typeof PASSWORD !== 'undefined' ? PASSWORD : '—');
+  profileOverlay.classList.add('show');
+}
+function hideProfile(){profileOverlay.classList.remove('show');}
+profileButton.addEventListener('click',showProfile);
+profileClose.addEventListener('click',hideProfile);
+profileLogout.addEventListener('click',()=>{
+  try{sessionStorage.removeItem('rg_ff_manual_login_ok');}catch(err){}
+  hideProfile();
+  if(typeof u!=='undefined') u.value='';
+  if(typeof p!=='undefined') p.value='';
+  if(typeof r!=='undefined') r.checked=false;
+  if(typeof e!=='undefined') e.textContent='';
+  if(typeof loginOverlay!=='undefined') loginOverlay.style.display='flex';
+});
+profileOverlay.addEventListener('click',e=>{if(e.target===profileOverlay)hideProfile();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')hideProfile();});
+</script>
+<script>
+const USERNAME='RGGAMERBOYFF';
+const PASSWORD='RGGAMERBOYFF13/10';
+
+// Shared bridge with the separate RG VPN Connect page.
+// Manual login stays valid for this tab until logout; VPN bypass is temporary.
+const VPN_BRIDGE_KEY='rg_web_vpn_connected_at';
+const VPN_BRIDGE_MAX_AGE=8000;
+const MANUAL_LOGIN_KEY='rg_ff_manual_login_ok';
+let wasVpnBypass=false;
+
+function isVpnPageConnected(){
+  try{
+    const lastBeat=Number(localStorage.getItem(VPN_BRIDGE_KEY)||0);
+    return lastBeat>0 && (Date.now()-lastBeat)>=0 && (Date.now()-lastBeat)<VPN_BRIDGE_MAX_AGE;
+  }catch(err){ return false; }
+}
+function manualLoginIsValid(){
+  try{return sessionStorage.getItem(MANUAL_LOGIN_KEY)==='1';}catch(err){return false;}
+}
+function syncVpnLoginGate(){
+  const connected=isVpnPageConnected();
+  if(connected){
+    wasVpnBypass=true;
+    loginOverlay.style.display='none';
+    if(typeof e!=='undefined') e.textContent='';
+    return;
+  }
+  // If this tab was being bypassed by the VPN, require login after disconnect.
+  if(wasVpnBypass){
+    wasVpnBypass=false;
+    try{sessionStorage.removeItem(MANUAL_LOGIN_KEY);}catch(err){}
+  }
+  loginOverlay.style.display=manualLoginIsValid()?'none':'flex';
+}
+function loadRememberedLogin(){syncVpnLoginGate();}
+function login(){
+  if(u.value===USERNAME&&p.value===PASSWORD){
+    try{sessionStorage.setItem(MANUAL_LOGIN_KEY,'1');}catch(err){}
+    loginOverlay.style.display='none';
+    e.textContent='';
+  }else{
+    e.textContent='Invalid username or password';
+    loginCard.animate([{transform:'translateX(-8px)'},{transform:'translateX(8px)'},{transform:'translateX(0)'}],{duration:250});
+  }
+}
+loadRememberedLogin();
+window.addEventListener('storage',event=>{
+  if(event.key===VPN_BRIDGE_KEY || event.key===null) syncVpnLoginGate();
+});
+setInterval(syncVpnLoginGate,1000);
+window.addEventListener('pageshow',syncVpnLoginGate);
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='visible') syncVpnLoginGate();
+});
+</script>
+
+
+<script>
+(() => {
+  const colors = [
+    '#ff3038', // Red
+    '#ff7a18', // Orange
+    '#ffd21a', // Yellow
+    '#20ff70', // Green
+    '#19d9ff', // Cyan
+    '#3d6bff', // Blue
+    '#b34dff'  // Purple
+  ];
+  let i = 0;
+  const root = document.documentElement;
+  function nextColor(){
+    root.style.setProperty('--cycle', colors[i]);
+    i = (i + 1) % colors.length;
+  }
+  nextColor();
+  setInterval(nextColor, 2000);
+})();
+</script>
+
+
+<script>
+(() => {
+  const owner = document.getElementById('ownerOnline');
+  if (!owner) return;
+
+  function ownerOnline(){
+    owner.classList.remove('owner-offline');
+    owner.textContent = '👑 Owner Online';
+  }
+
+  function ownerOffline(){
+    owner.classList.add('owner-offline');
+    owner.textContent = '🔴 Owner Offline';
+  }
+
+  // Online for 30 seconds, then offline for 60 seconds, repeating.
+  ownerOnline();
+  setTimeout(() => {
+    ownerOffline();
+    setInterval(() => {
+      ownerOnline();
+      setTimeout(ownerOffline, 30000);
+    }, 90000);
+  }, 30000);
+})();
+</script>
+
+<script id="human-verification-script">
+(() => {
+  const overlay=document.getElementById('humanVerifyOverlay');
+  const area=document.getElementById('taskArea');
+  const prompt=document.getElementById('taskPrompt');
+  const status=document.getElementById('taskStatus');
+  const notice=document.getElementById('verificationNotice');
+  const button=document.getElementById('humanContinue');
+  const loginOverlay=document.getElementById('loginOverlay');
+
+  const REQUIRED=5;
+  let completed=0;
+  let taskDone=false;
+
+  // One task type is randomly chosen for this verification session.
+  const taskTypes=['photo','number','color','map'];
+  const sessionType=taskTypes[Math.floor(Math.random()*taskTypes.length)];
+
+  const photos=['🐱','🐶','🐱','🐼','🦊','🐱'];
+  const colors=[
+    ['#ff3038','Red'],['#20ff70','Green'],['#19d9ff','Cyan'],
+    ['#ffd21a','Yellow'],['#b34dff','Purple'],['#3d6bff','Blue']
+  ];
+
+  function updateProgress(){
+    notice.textContent='⚠️ Please Complete Verification — '+completed+'/'+REQUIRED;
+  }
+
+  function resetTask(){
+    taskDone=false;
+    button.disabled=true;
+    button.classList.remove('ready');
+    status.textContent='';
+    updateProgress();
+  }
+
+  function correct(){
+    if(taskDone)return;
+    taskDone=true;
+    completed++;
+    status.textContent='✅ Correct! '+completed+'/'+REQUIRED+' completed.';
+    status.style.color='#20c55e';
+    button.disabled=false;
+    button.classList.add('ready');
+    notice.textContent=completed<REQUIRED
+      ? '⚠️ Please Complete Verification — '+completed+'/'+REQUIRED
+      : '✅ Verification Complete — 5/5';
+  }
+
+  function wrong(){
+    document.getElementById('verificationFail').style.display='flex';
+    document.getElementById('verificationFail').style.background='#000';
+    document.body.style.overflow='hidden';
+    overlay.style.display='none';
+    loginOverlay.style.display='none';
+    const success=document.getElementById('verificationSuccess');
+    if(success)success.style.display='none';
+  }
+
+  function renderPhoto(){
+    const target=photos[Math.floor(Math.random()*photos.length)];
+    prompt.textContent='Task: Match the same photo/symbol: '+target;
+    area.innerHTML='';
+    const shuffled=[target,'🐸','🦁','🐵','🐯','🐰'].sort(()=>Math.random()-.5);
+    shuffled.forEach(x=>{
+      const b=document.createElement('button');
+      b.className='shapeChoice';
+      b.textContent=x;
+      b.onclick=()=>x===target?correct():wrong();
+      area.appendChild(b);
+    });
+  }
+
+  function renderNumber(){
+    const answer=Math.floor(Math.random()*9)+1;
+    prompt.textContent='Task: Match the number '+answer+'.';
+    area.innerHTML='';
+    [answer,answer+1,answer-1,answer+2,answer+3]
+      .sort(()=>Math.random()-.5).forEach(n=>{
+        const b=document.createElement('button');
+        b.className='taskBtn';
+        b.textContent=n;
+        b.onclick=()=>n===answer?correct():wrong();
+        area.appendChild(b);
+      });
+  }
+
+  function renderColor(){
+    const answer=colors[Math.floor(Math.random()*colors.length)];
+    prompt.textContent='Task: Match the '+answer[1]+' color.';
+    area.innerHTML='<div class="colorGrid"></div>';
+    const grid=area.firstChild;
+    [...colors].sort(()=>Math.random()-.5).forEach(c=>{
+      const b=document.createElement('button');
+      b.className='colorChoice';
+      b.style.background=c[0];
+      b.onclick=()=>c[1]===answer[1]?correct():wrong();
+      grid.appendChild(b);
+    });
+  }
+
+  function renderMap(){
+    const target=Math.floor(Math.random()*16);
+    prompt.textContent='Task: Find and match the ⭐ on the map.';
+    area.innerHTML='<div class="mapGrid"></div>';
+    const grid=area.firstChild;
+    for(let i=0;i<16;i++){
+      const b=document.createElement('button');
+      b.className='mapCell';
+      b.textContent=i===target?'⭐':'';
+      b.onclick=()=>i===target?correct():wrong();
+      grid.appendChild(b);
+    }
+  }
+
+  function renderSameTypeTask(){
+    resetTask();
+    if(sessionType==='photo')renderPhoto();
+    else if(sessionType==='number')renderNumber();
+    else if(sessionType==='color')renderColor();
+    else renderMap();
+  }
+
+  button.addEventListener('click',()=>{
+    if(!taskDone)return;
+
+    if(completed<REQUIRED){
+      renderSameTypeTask();
+      return;
+    }
+
+    overlay.style.display='none';
+    document.getElementById('verificationSuccess').style.display='flex';
+  });
+
+  renderSameTypeTask();
+})();
+</script><script id="verification-success-script">
+(() => {
+  const success=document.getElementById('verificationSuccess');
+  const ok=document.getElementById('successOk');
+  const login=document.getElementById('loginOverlay');
+  ok.addEventListener('click',()=>{
+    success.style.display='none';
+    login.style.display='flex';
+  });
+})();
+</script><script id="five-hour-continuous-verification">
+(() => {
+  const FIVE_HOURS = 5 * 60 * 60 * 1000;
+  const overlay = document.getElementById('humanVerifyOverlay');
+  if (!overlay) return;
+
+  let startedAt = null;
+  let timer = null;
+  let triggered = false;
+
+  function startContinuousTimer(){
+    if (triggered || startedAt !== null) return;
+    startedAt = Date.now();
+    timer = setInterval(() => {
+      if (document.visibilityState !== 'visible') {
+        resetContinuousTimer();
+        return;
+      }
+      if (Date.now() - startedAt >= FIVE_HOURS) {
+        triggered = true;
+        clearInterval(timer);
+        timer = null;
+        overlay.style.setProperty('display','flex','important');
+        document.body.style.overflow = 'hidden';
+      }
+    }, 1000);
+  }
+
+  function resetContinuousTimer(){
+    if (timer) clearInterval(timer);
+    timer = null;
+    startedAt = null;
+    if (!triggered) overlay.style.setProperty('display','none','important');
+    if (document.visibilityState === 'visible' && !triggered) startContinuousTimer();
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') startContinuousTimer();
+    else resetContinuousTimer();
+  });
+
+  // A fresh page load always starts a new 5-hour continuous session.
+  if (document.visibilityState === 'visible') startContinuousTimer();
+})();
+</script>
+
+<script id="rg-web-vpn-customizer-script">
+(() => {
+  const KEY = "rg_web_vpn_login_customization_v1";
+  const $ = id => document.getElementById(id);
+
+  const defaults = {
+    bg:"#070b14", text:"#ffffff", button:"#ff3038",
+    position:"normal", effect:"none", image:""
+  };
+
+  function load(){
+    try { return {...defaults, ...JSON.parse(localStorage.getItem(KEY) || "{}")}; }
+    catch(e){ return {...defaults}; }
+  }
+
+  function apply(c){
+    const root=document.documentElement;
+    root.style.setProperty("--rg-vpn-bg", c.bg);
+    root.style.setProperty("--rg-vpn-text", c.text);
+    root.style.setProperty("--rg-vpn-button", c.button);
+
+    document.body.style.backgroundColor=c.bg;
+    document.body.style.color=c.text;
+
+    if(c.image){
+      document.body.style.backgroundImage =
+        `linear-gradient(rgba(0,0,0,.38),rgba(0,0,0,.38)),url("${c.image}")`;
+      document.body.style.backgroundSize="cover";
+      document.body.style.backgroundPosition="center";
+      document.body.style.backgroundAttachment="fixed";
+    }else{
+      document.body.style.backgroundImage="";
+      document.body.style.backgroundSize="";
+      document.body.style.backgroundPosition="";
+      document.body.style.backgroundAttachment="";
+    }
+
+    document.querySelectorAll("button").forEach(b=>{
+      if(!b.closest("#rgVpnCard") && !b.id.includes("rgVpnOpen")){
+        b.style.setProperty("background-color",c.button,"important");
+      }
+    });
+
+    const cls="rg-vpn-user-effect";
+    document.querySelectorAll("."+cls).forEach(e=>e.classList.remove(cls));
+    if(c.effect!=="none"){
+      document.querySelectorAll("button:not(#rgVpnOpen)").forEach(b=>{
+        if(!b.closest("#rgVpnCard")) b.classList.add(cls+" "+c.effect);
+      });
+    }
+
+    const loginCard=document.getElementById("loginCard");
+    if(loginCard){
+      loginCard.style.transform =
+        c.position==="higher" ? "translateY(-22px)" :
+        c.position==="lower" ? "translateY(22px)" : "";
+    }
+  }
+
+  const style=document.createElement("style");
+  style.textContent=`
+    body{color:var(--rg-vpn-text,#fff)!important}
+    .rg-vpn-user-effect.pulse{animation:rgVpnPulse 1.5s ease-in-out infinite!important}
+    .rg-vpn-user-effect.float{animation:rgVpnFloat 2s ease-in-out infinite!important}
+    @keyframes rgVpnPulse{50%{filter:brightness(1.18)}}
+    @keyframes rgVpnFloat{50%{transform:translateY(-3px)}}
+  `;
+  document.head.appendChild(style);
+
+  function fill(c){
+    $("rgVpnBg").value=c.bg; $("rgVpnText").value=c.text;
+    $("rgVpnButton").value=c.button; $("rgVpnPosition").value=c.position;
+    $("rgVpnEffect").value=c.effect; $("rgVpnImage").value=c.image;
+  }
+
+  const current=load();
+  fill(current); apply(current);
+
+  $("rgVpnOpen").onclick=()=> $("rgVpnPanel").classList.add("show");
+  $("rgVpnClose").onclick=()=> $("rgVpnPanel").classList.remove("show");
+
+  $("rgVpnSave").onclick=()=>{
+    const c={
+      bg:$("rgVpnBg").value, text:$("rgVpnText").value,
+      button:$("rgVpnButton").value, position:$("rgVpnPosition").value,
+      effect:$("rgVpnEffect").value, image:$("rgVpnImage").value.trim()
+    };
+    localStorage.setItem(KEY,JSON.stringify(c));
+    apply(c);
+    $("rgVpnPanel").classList.remove("show");
+  };
+
+  $("rgVpnReset").onclick=()=>{
+    localStorage.removeItem(KEY);
+    fill(defaults); apply(defaults);
+  };
+
+  $("rgVpnPanel").addEventListener("click",e=>{
+    if(e.target === $("rgVpnPanel")) $("rgVpnPanel").classList.remove("show");
+  });
+})();
+</script>
+
+</body>
+</html>
+<style id="remove-cooldown-notice">
+[id*="cooldown" i],[class*="cooldown" i]{display:none!important}
+</style>
