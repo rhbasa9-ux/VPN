@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>RG GAMER BOY FF — Sign in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="./" aria-label="RG GAMER BOY FF home"><img class="brand-logo" src="https://i.supaimg.com/cc740f2b-876c-4dd7-bbf2-16d636413b82/85320e1a-9a75-4178-90bb-a7f01267a661.png" alt="RG logo"><span>RG GAMER BOY FF</span></a><span class="secure connection-readouts" aria-label="Connection status"><span class="ping-readout"><span id="countryFlag" class="country-flag-readout" aria-label="Selected country">🌐</span><span id="regionPing" aria-live="polite">Checking…</span></span><span class="speed-readout"><span class="dot" id="pingDot" data-state="ok" aria-hidden="true"></span><span id="countrySpeed" aria-live="polite">Checking…</span></span></span></header>
+<main class="shell">
+<section class="card">
+<div class="hero-logo-wrap"><img class="hero-logo" src="https://i.supaimg.com/cc740f2b-876c-4dd7-bbf2-16d636413b82/85320e1a-9a75-4178-90bb-a7f01267a661.png" alt="RG GAMER BOY FF logo"></div>
+<div class="eyebrow">OFFICIAL ACCOUNT ACCESS</div>
+<h1 id="welcomeTitle">Welcome</h1>
+<p class="subtitle" id="welcomeSubtitle">Choose how you want to continue.</p>
+<div id="status" class="status" role="status" aria-live="polite"></div>
+<section id="regionStage" class="region-stage" hidden aria-labelledby="regionTitle">
+  <div class="region-heading">
+    <div class="region-kicker">ACCOUNT SETUP</div>
+    <h2 id="regionTitle">Select Your Region</h2>
+    <p>Choose your region first, then select your country.</p>
+  </div>
+  <div id="regionChoices" class="region-choices" aria-label="Available regions"></div>
+  <div id="countryArea" class="country-area" hidden>
+    <div class="country-heading"><strong id="countryTitle">Select Country</strong><span id="countryCount"></span></div>
+    <div id="countryChoices" class="country-choices" aria-label="Available countries"></div>
+  </div>
+  <button id="regionContinueBtn" class="primary-btn region-continue" disabled>Continue</button>
+  <p class="region-hint">You can change your region and country later.</p>
+</section>
+<div id="loginStage" hidden>
+<button id="changeRegionBtn" class="change-region-btn" type="button">Change Region / Country</button>
+<div id="authOptions">
+<button id="googleBtn" class="auth-btn google-btn">
+<svg class="google-icon" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.93c-.58 2.96-2.25 5.48-4.73 7.18l7.62 5.9c4.45-4.11 7.16-10.16 7.16-17.55z"/><path fill="#FBBC05" d="M10.53 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.13.76-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.9-5.9l-7.62-5.9c-2.11 1.41-4.81 2.25-8.28 2.25-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+<span>Continue with Google</span>
+</button>
+<div class="separator"><span>OR</span></div>
+<a class="auth-btn username-btn" href="https://rggamerboyff.github.io/RG-GAMER-BOY-FF/" target="_blank" rel="noopener"><span class="btn-symbol">♙</span><span>Continue with Username &amp; Password</span><span class="lock">↗</span></a>
+</div>
+<div id="signedIn" class="signed-in" hidden>
+<button id="continueBtn" class="primary-btn">Continue</button>
+<button id="deleteAccountBtn" class="delete-account-btn" hidden>Delete Account</button>
+
+</div>
+</div>
+<p class="fineprint">By continuing, you confirm that you have reviewed and accepted our policies.</p>
+</section>
+</main>
+<footer class="footer">
+<div class="footer-links"><a href="./privacy.html">Privacy Policy</a><span>·</span><a href="./terms.html">Terms of Service</a></div>
+<p>© <span id="year"></span> RG GAMER BOY FF</p>
+</footer>
+<div id="consentModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="consentTitle">
+<div class="modal-card">
+<div class="modal-icon">✓</div><h2 id="consentTitle">Before you continue</h2>
+<p>Please check our Privacy Policy and Terms of Service to understand how this website works and how account information is handled.</p>
+<div class="policy-links"><a href="./privacy.html" target="_blank" rel="noopener">Read Privacy Policy ↗</a><a href="./terms.html" target="_blank" rel="noopener">Read Terms of Service ↗</a></div>
+<label class="check-row"><input type="checkbox" id="acceptBox"><span>I have read and agree to the Privacy Policy and Terms of Service.</span></label>
+<button id="acceptBtn" class="primary-btn" disabled>Continue</button>
+<small class="modal-note">You must select the checkbox to use the sign-in options.</small>
+</div></div>
+<script>
+// Policy consent is deliberately independent of Firebase sign-in.
+(()=>{
+ const modal=document.getElementById("consentModal");
+ const checkbox=document.getElementById("acceptBox");
+ const button=document.getElementById("acceptBtn");
+ if(!modal||!checkbox||!button)return;
+ const key="rg_policy_acceptance_2026-11-23-v1";
+ const sync=()=>{button.disabled=!checkbox.checked;};
+ checkbox.addEventListener("input",sync);
+ checkbox.addEventListener("change",sync);
+ button.addEventListener("click",()=>{
+  if(!checkbox.checked){sync();return;}
+  try{localStorage.setItem(key,"yes")}catch{}
+  modal.hidden=true;
+ });
+ try{if(localStorage.getItem(key)==="yes")modal.hidden=true}catch{}
+ sync();
+})();
+</script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, setPersistence, browserLocalPersistence, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
+import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-database.js";
+
+const firebaseConfig = {
+ apiKey:"AIzaSyCOg8GiS_9SOjKyDjKG2veVPqARnmgABXg",
+ authDomain:"rg-gamer-boy-ff-login.firebaseapp.com",
+ databaseURL:"https://rg-gamer-boy-ff-login-default-rtdb.asia-southeast1.firebasedatabase.app",
+ projectId:"rg-gamer-boy-ff-login",
+ storageBucket:"rg-gamer-boy-ff-login.firebasestorage.app",
+ messagingSenderId:"639008504830",
+ appId:"1:639008504830:web:86af6b6b4f0346016d9eaf",
+ measurementId:"G-5Y9K275M27"
+};
+const app=initializeApp(firebaseConfig), auth=getAuth(app), db=getDatabase(app);
+const $=id=>document.getElementById(id), status=$("status");
+const POLICY_VERSION="2026-11-23-v1";
+$("year").textContent=new Date().getFullYear();
+
+// Keep the existing Privacy Policy / Terms consent behavior unchanged.
+const consentKey="rg_policy_acceptance_"+POLICY_VERSION;
+const modal=$("consentModal"), accept=$("acceptBox"), acceptBtn=$("acceptBtn");
+function updateConsent(){acceptBtn.disabled=!accept.checked}
+accept.addEventListener("change",updateConsent);
+try{if(localStorage.getItem(consentKey)==="yes") modal.hidden=true}catch{}
+acceptBtn.addEventListener("click",()=>{
+ if(!accept.checked)return;
+ try{localStorage.setItem(consentKey,"yes")}catch{}
+ modal.hidden=true;
+});
+
+// Version bump intentionally resets the previous saved region/country once.
+const REGION_KEY="rg_user_region_country_v2";
+localStorage.removeItem("rg_user_region_country_v1");
+const COUNTRY_DATA={
+ "Asia":[["🇮🇳","India"],["🇵🇰","Pakistan"],["🇧🇩","Bangladesh"],["🇮🇩","Indonesia"],["🇸🇬","Singapore"],["🇻🇳","Vietnam"],["🇳🇵","Nepal"]],
+ "North America":[["🇺🇸","United States"],["🇨🇦","Canada"],["🇲🇽","Mexico"],["🇧🇿","Belize"],["🇨🇷","Costa Rica"],["🇸🇻","El Salvador"],["🇬🇹","Guatemala"],["🇭🇳","Honduras"],["🇳🇮","Nicaragua"],["🇵🇦","Panama"],["🇦🇬","Antigua and Barbuda"],["🇧🇸","Bahamas"],["🇧🇧","Barbados"],["🇨🇺","Cuba"],["🇩🇲","Dominica"],["🇩🇴","Dominican Republic"],["🇬🇩","Grenada"],["🇭🇹","Haiti"],["🇯🇲","Jamaica"],["🇰🇳","Saint Kitts and Nevis"],["🇱🇨","Saint Lucia"],["🇻🇨","Saint Vincent and the Grenadines"],["🇹🇹","Trinidad and Tobago"]],
+ "South America":[["🇧🇷","Brazil"]]
+};
+let savedSelection=null;
+try{savedSelection=JSON.parse(localStorage.getItem(REGION_KEY)||"null")}catch{savedSelection=null}
+let selectedRegion=COUNTRY_DATA[savedSelection?.region]?savedSelection.region:"";
+let selectedCountry=COUNTRY_DATA[selectedRegion]?.some(item=>item[1]===savedSelection?.country)?savedSelection.country:"";
+let signedInUser=null;
+let pingRequestId=0;
+let pingInFlight=false;
+const pingLabel=$("regionPing"), pingDot=$("pingDot"), countryFlagLabel=$("countryFlag");
+function setPingLabel(message,state="idle"){
+ if(pingLabel)pingLabel.textContent=message;
+ // The green indicator belongs to the network-speed readout.
+ if(pingDot)pingDot.dataset.state="ok";
+}
+function selectedCountryFlag(){
+ return (COUNTRY_DATA[selectedRegion]||[]).find(item=>item[1]===selectedCountry)?.[0]||"🌐";
+}
+function updateCountryFlag(){
+ if(countryFlagLabel){
+  countryFlagLabel.textContent=selectedCountryFlag();
+  countryFlagLabel.setAttribute("aria-label",selectedCountry ? "Selected country: "+selectedCountry : "No country selected");
+ }
+}
+async function measureDatabasePing(){
+ const samples=[];
+ for(let i=0;i<3;i++){
+  const controller=new AbortController();
+  const timeout=setTimeout(()=>controller.abort(),5000);
+  const started=performance.now();
+  try{
+   // The root read may be denied by the database rules; the HTTP response still
+   // provides a safe round-trip measurement without reading user profile data.
+   const url=firebaseConfig.databaseURL.replace(/\/$/,"")+"/.json?shallow=true&ping="+Date.now()+"_"+i;
+   const response=await fetch(url,{method:"GET",mode:"cors",cache:"no-store",credentials:"omit",signal:controller.signal});
+   const elapsed=Math.round(performance.now()-started);
+   if(!response.ok&&response.status!==401&&response.status!==403)throw new Error("PING_HTTP_"+response.status);
+   if(response.body)response.body.cancel().catch(()=>{});
+   samples.push(elapsed);
+  }catch(error){
+   // Continue the remaining attempts; report failure only if none can reach RTDB.
+  }finally{clearTimeout(timeout);}
+ }
+ if(!samples.length)throw new Error("PING_CONNECTION_FAILED");
+ samples.sort((a,b)=>a-b);
+ return samples[Math.floor(samples.length/2)];
+}
+async function updateRegionPing(){
+ if(pingInFlight||document.visibilityState==="hidden")return;
+ updateCountryFlag();
+ if(!selectedRegion||!selectedCountry){setPingLabel("Checking…","idle");return;}
+ pingInFlight=true;
+ const requestId=++pingRequestId;
+ const flag=selectedCountryFlag();
+ setPingLabel("Checking…","checking");
+ try{
+  const ms=await measureDatabasePing();
+  if(requestId!==pingRequestId)return;
+  setPingLabel(ms+" ms","ok");
+ }catch(error){
+  if(requestId===pingRequestId)setPingLabel("Unavailable","failed");
+ }finally{pingInFlight=false;}
+}
+
+function updateCountrySpeed(){
+ const label=$("countrySpeed");
+ if(!label)return;
+ const connection=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
+ const downlink=connection&&Number(connection.downlink);
+ label.textContent=Number.isFinite(downlink)&&downlink>0?downlink.toFixed(1)+" Mbps":"Unavailable";
+}
+
+function showError(msg){status.textContent=msg}
+function clearStatus(){status.textContent=""}
+function showRegionStage(){
+ $("regionStage").hidden=false;$("loginStage").hidden=true;
+ renderRegions();
+ if(selectedRegion)renderCountries();else{$("countryArea").hidden=true;$ ("regionContinueBtn").disabled=true;}
+}
+function showLoginStage(){ $("regionStage").hidden=true;$("loginStage").hidden=false; }
+function renderRegions(){
+ const host=$("regionChoices");host.replaceChildren();
+ Object.keys(COUNTRY_DATA).forEach(name=>{
+  const button=document.createElement("button");button.type="button";button.className="region-option"+(selectedRegion===name?" selected":"");
+  const symbol=name==="Asia"?"🌏":"🌎";
+  button.innerHTML=`<span class="region-symbol">${symbol}</span><span class="region-option-text"><strong>${name}</strong><small>${COUNTRY_DATA[name].length} ${COUNTRY_DATA[name].length===1?"country":"countries"}</small></span><span class="region-check" aria-hidden="true">✓</span>`;
+  button.addEventListener("click",()=>{selectedRegion=name;selectedCountry="";updateCountryFlag();renderRegions();renderCountries();updateRegionPing();});
+  host.append(button);
+ });
+}
+function renderCountries(){
+ const countries=COUNTRY_DATA[selectedRegion]||[];
+ updateCountryFlag();
+ $("countryArea").hidden=!selectedRegion;
+ $("countryTitle").textContent=selectedRegion+" — Select Country";
+ $("countryCount").textContent=countries.length+" available";
+ const host=$("countryChoices");host.replaceChildren();
+ countries.forEach(([flag,name])=>{
+  const button=document.createElement("button");button.type="button";button.className="country-option"+(selectedCountry===name?" selected":"");
+  button.innerHTML=`<span class="country-flag">${flag}</span><span>${name}</span><span class="country-check" aria-hidden="true">✓</span>`;
+  button.addEventListener("click",()=>{selectedCountry=name;updateCountryFlag();renderCountries();$("regionContinueBtn").disabled=false;updateRegionPing();});
+  host.append(button);
+ });
+ $("regionContinueBtn").disabled=!(selectedRegion&&selectedCountry);
+}
+async function saveBasicProfile(user,provider){
+ if(!selectedRegion||!selectedCountry)throw new Error("REGION_REQUIRED");
+ const profileRef=ref(db,"users/"+user.uid+"/profile");
+ const snapshot=await get(profileRef);
+ const previous=snapshot.exists()?snapshot.val():{};
+ const data={...previous,uid:user.uid,provider,displayName:user.displayName||previous.displayName||"Guest",email:user.email||previous.email||null,photoURL:user.photoURL||previous.photoURL||null,region:selectedRegion,country:selectedCountry,lastSignInAt:Date.now()};
+ await set(profileRef,data);
+}
+async function showAuthenticatedUser(user){
+ if(!user)return;
+ signedInUser=user;
+ if(!selectedRegion||!selectedCountry){showRegionStage();return;}
+ try{
+  const provider="google.com";
+  await saveBasicProfile(user,provider);
+  const isGoogleUser=user.providerData.some(item=>item.providerId==="google.com");
+  if(!isGoogleUser)throw new Error("GOOGLE_ACCOUNT_REQUIRED");
+  $("welcomeTitle").textContent="Welcome Back";
+  $("welcomeSubtitle").textContent="You are signed in successfully.";
+  $("authOptions").hidden=true;$("signedIn").hidden=false;
+  $("deleteAccountBtn").hidden=!isGoogleUser;
+  showLoginStage();
+ }catch(e){showError(e.message==="REGION_REQUIRED"?"Please select your region and country first.":e.message==="GOOGLE_ACCOUNT_REQUIRED"?"Please continue with a Google account.":"Google sign-in succeeded, but the profile could not be saved. Check the Realtime Database rules for this Firebase project.");showRegionStage();}
+}
+function friendlyError(e){
+ const c=e?.code||"";
+ if(c.includes("unauthorized-domain"))return "This website domain is not authorized for Firebase Authentication. Add "+location.hostname+" in Firebase Authentication → Settings → Authorized domains.";
+ if(c.includes("popup-blocked"))return "Google sign-in popup was blocked. Please allow popups and try again.";
+ if(c.includes("popup-closed"))return "Google sign-in was closed before completion. Please try again.";
+ if(c.includes("network"))return "Network problem. Check your internet connection and try again.";
+ return "Sign-in could not be completed ("+c+"). Please try again.";
+}
+function safeNext(){location.href=new URL("./main.html",window.location.href).href}
+
+$("regionContinueBtn").addEventListener("click",async()=>{
+ if(!selectedRegion||!selectedCountry)return;
+ const selection={region:selectedRegion,country:selectedCountry};
+ localStorage.setItem(REGION_KEY,JSON.stringify(selection));
+ clearStatus();showLoginStage();
+ if(signedInUser)await showAuthenticatedUser(signedInUser);
+});
+$("changeRegionBtn").addEventListener("click",()=>{clearStatus();showRegionStage();});
+
+// The region screen is mandatory after policy acceptance unless a valid choice was saved before.
+if(selectedRegion&&selectedCountry){showLoginStage();updateRegionPing();}else showRegionStage();
+// Refresh the measured RTDB round-trip automatically without reloading the page.
+setInterval(()=>{if(document.visibilityState==="visible")updateRegionPing();},10000);
+setInterval(()=>{if(document.visibilityState==="visible")updateCountrySpeed();},2000);
+updateCountrySpeed();
+updateCountryFlag();
+window.addEventListener("online",()=>{updateRegionPing();updateCountrySpeed();});
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"){updateRegionPing();updateCountrySpeed();}});
+
+$("googleBtn").addEventListener("click",async()=>{
+ clearStatus();$("googleBtn").disabled=true;
+ try{
+  await setPersistence(auth,browserLocalPersistence);
+  const p=new GoogleAuthProvider();p.setCustomParameters({prompt:"select_account"});
+  try{await signInWithPopup(auth,p);}catch(e){
+   if(["auth/popup-blocked","auth/operation-not-supported-in-this-environment"].includes(e.code)){await signInWithRedirect(auth,p);return;}
+   throw e;
+  }
+ }catch(e){showError(friendlyError(e));$("googleBtn").disabled=false;}
+});
+
+try{await getRedirectResult(auth)}catch(e){showError(friendlyError(e))}
+onAuthStateChanged(auth,async user=>{
+ if(!user){signedInUser=null;$("signedIn").hidden=true;$("authOptions").hidden=false;$("deleteAccountBtn").hidden=true;$("welcomeTitle").textContent="Welcome";$("welcomeSubtitle").textContent="Choose how you want to continue.";$("googleBtn").disabled=false;if(selectedRegion&&selectedCountry)showLoginStage();else showRegionStage();return;}
+ await showAuthenticatedUser(user);
+});
+$("continueBtn").addEventListener("click",()=>safeNext());
+$("deleteAccountBtn").addEventListener("click",()=>window.open("https://docs.google.com/forms/d/e/1FAIpQLScPdr838eNtKeTrt40nIlzS9w-Sz7Hvsotf1-MZAlXI5JWXEw/viewform?usp=dialog","_blank","noopener,noreferrer"));
+
+</script>
+</body></html>
